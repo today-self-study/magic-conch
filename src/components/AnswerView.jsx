@@ -24,20 +24,7 @@ function AnswerView({ question, answer, onReset }) {
   };
 
   return (
-    <div className="magic-conch-card" style={{
-      maxWidth: 400,
-      width: '100%',
-      minWidth: 0,
-      margin: '40px auto',
-      padding: 24,
-      boxShadow: '0 2px 8px #eee',
-      borderRadius: 12,
-      background: '#fff',
-      textAlign: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 8
-    }}>
+    <div className="magic-conch-card">
       <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:8,marginBottom:8}}>
         <span role="img" aria-label="소라고동" style={{fontSize:'1.6em',verticalAlign:'middle'}}>🐚</span>
         <span style={{fontWeight:700,fontSize:20,color:'#6c63ff',letterSpacing:'-0.5px'}}>마법의 소라고동</span>

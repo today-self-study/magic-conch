@@ -31,19 +31,7 @@ function MainForm({ onAnswered }) {
   if (answers.length === 0) return <div style={{color:'red',textAlign:'center',marginTop:40}}>응답 풀이 비어 있습니다. answers.txt 파일을 확인하세요.</div>;
 
   return (
-    <form className="magic-conch-card" onSubmit={handleAsk} style={{
-      maxWidth: 400,
-      width: '100%',
-      minWidth: 0,
-      margin: '40px auto',
-      padding: 24,
-      boxShadow: '0 2px 8px #eee',
-      borderRadius: 12,
-      background: '#fff',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 8
-    }}>
+    <form className="magic-conch-card" onSubmit={handleAsk}>
       <h2 style={{
         textAlign:'center',
         fontSize: '1.3rem',

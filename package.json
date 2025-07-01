@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "set-version": "node scripts/write-env.js",
+    "set-version": "node scripts/write-env.cjs",
     "prebuild": "npm run set-version"
   },
   "dependencies": {

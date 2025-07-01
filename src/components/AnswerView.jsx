@@ -11,6 +11,7 @@ function AnswerView({ question, answer, onReset }) {
   // 메인으로 이동 (HashRouter)
   const handleAskAgain = () => {
     window.location.href = window.location.origin + window.location.pathname + '#/';
+    setTimeout(() => window.location.reload(), 50);
   };
 
   const handleShare = async () => {

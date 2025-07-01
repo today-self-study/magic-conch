@@ -55,6 +55,10 @@ html, body, #root {
 
 /* 모바일 반응형 개선 */
 @media (max-width: 600px) {
+  html, body, #root {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
   #root {
     padding: 0.5rem 0.1rem;
     max-width: 100vw;
@@ -91,6 +95,19 @@ html, body, #root {
   .read-the-docs {
     font-size: 0.9rem;
   }
+  .magic-conch-card, form, .card {
+    padding: 3vw 2vw;
+    margin: 4vw 2vw;
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  input, button, textarea {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 
 h1, h2, h3 {
@@ -119,22 +136,6 @@ input[type="text"], input[type="search"], textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-@media (max-width: 600px) {
-  .magic-conch-card, form, .card {
-    padding: 3vw 2vw;
-    margin: 4vw 2vw;
-    width: 100%;
-    max-width: 100vw;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-  input, button, textarea {
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
 }
 
 .footer-version {

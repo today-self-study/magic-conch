@@ -7,7 +7,7 @@ function MainForm({ onAnswered }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/answers.txt')
+    fetch(import.meta.env.BASE_URL + 'answers.txt')
       .then(res => res.text())
       .then(text => {
         setAnswers(text.split('\n').map(s => s.trim()).filter(Boolean));

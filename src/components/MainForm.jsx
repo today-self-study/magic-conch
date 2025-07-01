@@ -44,17 +44,56 @@ function MainForm({ onAnswered }) {
       flexDirection: 'column',
       gap: 8
     }}>
-      <h2 style={{textAlign:'center',fontSize: '1.3rem',marginBottom:8}}>마법의 소라고동님께 무엇이든 물어보세요</h2>
+      <h2 style={{
+        textAlign:'center',
+        fontSize: '1.3rem',
+        marginBottom:8,
+        color: '#6c63ff',
+        fontWeight: 700,
+        letterSpacing: '-0.5px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8
+      }}>
+        <span role="img" aria-label="소라고동" style={{fontSize:'1.6em'}}>🐚</span>
+        마법의 소라고동님께 무엇이든 물어보세요
+      </h2>
       <input
         type="text"
         value={question}
         onChange={e => setQuestion(e.target.value)}
         placeholder="질문을 입력하세요"
-        style={{width:'100%',padding:12,fontSize:16,margin:'16px 0',borderRadius:8,border:'1px solid #ccc',boxSizing:'border-box'}}
+        style={{
+          width:'100%',
+          padding: '14px 12px',
+          fontSize:18,
+          margin:'18px 0',
+          borderRadius:10,
+          border:'1.5px solid #b39ddb',
+          boxSizing:'border-box',
+          outline: 'none',
+          background:'#f7f6fd',
+          color:'#333',
+          fontWeight:500
+        }}
         maxLength={100}
         required
       />
-      <button type="submit" style={{width:'100%',padding:12,fontSize:18,borderRadius:8,background:'#6c63ff',color:'#fff',border:'none',cursor:'pointer'}}>마법의 소라고동님께 물어보기</button>
+      <button type="submit" style={{
+        width:'100%',
+        padding:14,
+        fontSize:18,
+        borderRadius:10,
+        background:'linear-gradient(90deg,#6c63ff 60%,#b39ddb 100%)',
+        color:'#fff',
+        border:'none',
+        cursor:'pointer',
+        fontWeight:700,
+        letterSpacing:'-0.5px',
+        marginTop:4,
+        boxShadow:'0 2px 8px #eee'
+      }}>🐚 마법의 소라고동님께 물어보기</button>
     </form>
   );
 }

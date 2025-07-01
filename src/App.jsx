@@ -56,7 +56,7 @@ function App() {
           </Routes>
         </div>
         <footer style={{textAlign:'center',margin:'40px 0 0 0',color:'#aaa',fontSize:14}}>
-          © {new Date().getFullYear()} 마법의 소라고동 서비스
+          © {new Date().getFullYear()} 마법의 소라고동
         </footer>
       </div>
     </HashRouter>

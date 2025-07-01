@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import MainForm from './components/MainForm';
+import AnswerView from './components/AnswerView';
+import { decryptData } from './utils/crypto';
 
-function App() {
-  const [count, setCount] = useState(0)
+function MainFlow() {
+  const [step, setStep] = useState('ask');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const handleAnswered = (q, a) => {
+    setQuestion(q);
+    setAnswer(a);
+    setStep('result');
+  };
+  const handleReset = () => {
+    setQuestion('');
+    setAnswer('');
+    setStep('ask');
+  };
+
+  return step === 'ask' ? (
+    <MainForm onAnswered={handleAnswered} />
+  ) : (
+    <AnswerView question={question} answer={answer} onReset={handleReset} />
+  );
 }
 
-export default App
+function ResultPage() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const d = params.get('d');
+  let content = null;
+  if (!d) {
+    content = <div style={{color:'red',textAlign:'center',marginTop:40}}>잘못된 접근입니다.</div>;
+  } else {
+    const data = decryptData(d);
+    if (!data) {
+      content = <div style={{color:'red',textAlign:'center',marginTop:40}}>복호화에 실패했습니다. URL이 올바른지 확인하세요.</div>;
+    } else {
+      content = <AnswerView question={data.question} answer={data.answer} onReset={() => window.location.href = '/'} />;
+    }
+  }
+  return content;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div style={{minHeight:'100vh',background:'#f5f6fa'}}>
+        <Routes>
+          <Route path="/" element={<MainFlow />} />
+          <Route path="/result" element={<ResultPage />} />
+        </Routes>
+        <footer style={{textAlign:'center',margin:'40px 0 0 0',color:'#aaa',fontSize:14}}>
+          © {new Date().getFullYear()} 마법의 소라고동 서비스
+        </footer>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;

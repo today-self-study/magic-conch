@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import MainForm from './components/MainForm';
 import AnswerView from './components/AnswerView';
 import { decryptData } from './utils/crypto';
@@ -47,7 +47,7 @@ function ResultPage() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div style={{minHeight:'100vh',background:'#f5f6fa'}}>
         <Routes>
           <Route path="/" element={<MainFlow />} />
@@ -57,7 +57,7 @@ function App() {
           © {new Date().getFullYear()} 마법의 소라고동 서비스
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

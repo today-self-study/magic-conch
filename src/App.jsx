@@ -58,6 +58,9 @@ function App() {
         <footer style={{textAlign:'center',margin:'40px 0 0 0',color:'#aaa',fontSize:14}}>
           © {new Date().getFullYear()} 마법의 소라고동
         </footer>
+        <footer className="footer-version">
+          v{import.meta.env.VITE_APP_VERSION} ({import.meta.env.VITE_APP_GIT_HASH})
+        </footer>
       </div>
     </HashRouter>
   );

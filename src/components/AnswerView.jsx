@@ -17,7 +17,20 @@ function AnswerView({ question, answer, onReset }) {
   };
 
   return (
-    <div style={{maxWidth:400,margin:'40px auto',padding:24,boxShadow:'0 2px 8px #eee',borderRadius:12,background:'#fff',textAlign:'center'}}>
+    <div className="magic-conch-card" style={{
+      maxWidth: 400,
+      width: '100%',
+      minWidth: 0,
+      margin: '40px auto',
+      padding: 24,
+      boxShadow: '0 2px 8px #eee',
+      borderRadius: 12,
+      background: '#fff',
+      textAlign: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8
+    }}>
       <div style={{fontSize:18,marginBottom:12,color:'#888'}}>내가 물어본 질문</div>
       <div style={{fontWeight:'bold',fontSize:20,marginBottom:24}}>{question}</div>
       <div style={{fontSize:18,marginBottom:12,color:'#888'}}>마법의 소라고동의 대답</div>

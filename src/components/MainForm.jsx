@@ -28,16 +28,29 @@ function MainForm({ onAnswered }) {
 
   if (loading) return <div>로딩 중...</div>;
   if (error) return <div style={{color:'red'}}>{error}</div>;
+  if (answers.length === 0) return <div style={{color:'red',textAlign:'center',marginTop:40}}>응답 풀이 비어 있습니다. answers.txt 파일을 확인하세요.</div>;
 
   return (
-    <form onSubmit={handleAsk} style={{maxWidth:400,margin:'40px auto',padding:24,boxShadow:'0 2px 8px #eee',borderRadius:12,background:'#fff'}}>
-      <h2 style={{textAlign:'center'}}>마법의 소라고동님께 무엇이든 물어보세요</h2>
+    <form className="magic-conch-card" onSubmit={handleAsk} style={{
+      maxWidth: 400,
+      width: '100%',
+      minWidth: 0,
+      margin: '40px auto',
+      padding: 24,
+      boxShadow: '0 2px 8px #eee',
+      borderRadius: 12,
+      background: '#fff',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8
+    }}>
+      <h2 style={{textAlign:'center',fontSize: '1.3rem',marginBottom:8}}>마법의 소라고동님께 무엇이든 물어보세요</h2>
       <input
         type="text"
         value={question}
         onChange={e => setQuestion(e.target.value)}
         placeholder="질문을 입력하세요"
-        style={{width:'100%',padding:12,fontSize:16,margin:'16px 0',borderRadius:8,border:'1px solid #ccc'}}
+        style={{width:'100%',padding:12,fontSize:16,margin:'16px 0',borderRadius:8,border:'1px solid #ccc',boxSizing:'border-box'}}
         maxLength={100}
         required
       />

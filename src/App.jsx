@@ -48,11 +48,13 @@ function ResultPage() {
 function App() {
   return (
     <HashRouter>
-      <div style={{minHeight:'100vh',background:'#f5f6fa'}}>
-        <Routes>
-          <Route path="/" element={<MainFlow />} />
-          <Route path="/result" element={<ResultPage />} />
-        </Routes>
+      <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',minHeight:'100vh',width:'100vw',background:'#f5f6fa'}}>
+        <div style={{flex:1,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',width:'100%',minHeight:'80vh'}}>
+          <Routes>
+            <Route path="/" element={<MainFlow />} />
+            <Route path="/result" element={<ResultPage />} />
+          </Routes>
+        </div>
         <footer style={{textAlign:'center',margin:'40px 0 0 0',color:'#aaa',fontSize:14}}>
           © {new Date().getFullYear()} 마법의 소라고동 서비스
         </footer>

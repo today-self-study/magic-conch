@@ -105,3 +105,34 @@ button {
 input[type="text"], input[type="search"], textarea {
   font-size: clamp(1rem, 3.5vw, 1.1rem);
 }
+
+.magic-conch-card, form, .card {
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1.2rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .magic-conch-card, form, .card {
+    padding: 0.5rem 0.2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  input, button, textarea {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}

@@ -56,7 +56,7 @@ function MainForm({ onAnswered }) {
         justifyContent: 'center',
         gap: 8
       }}>
-        <span role="img" aria-label="소라고동" style={{fontSize:'1.6em'}}>🐚</span>
+        <img src={import.meta.env.BASE_URL + 'conch.svg'} alt="소라고동" style={{height:'1.6em',verticalAlign:'middle'}} />
         마법의 소라고동님께 무엇이든 물어보세요
       </h2>
       <input

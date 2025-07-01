@@ -39,7 +39,7 @@ function AnswerView({ question, answer, onReset }) {
       gap: 8
     }}>
       <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:8,marginBottom:8}}>
-        <img src={import.meta.env.BASE_URL + 'conch.svg'} alt="소라고동" style={{height:'1.6em',verticalAlign:'middle'}} />
+        <span role="img" aria-label="소라고동" style={{fontSize:'1.6em',verticalAlign:'middle'}}>🐚</span>
         <span style={{fontWeight:700,fontSize:20,color:'#6c63ff',letterSpacing:'-0.5px'}}>마법의 소라고동</span>
       </div>
       <div style={{fontSize:16,marginBottom:8,color:'#888'}}>물어본 질문</div>
@@ -67,7 +67,7 @@ function AnswerView({ question, answer, onReset }) {
           onMouseOver={e => e.currentTarget.style.background = '#b39ddb'}
           onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(90deg,#6c63ff 60%,#b39ddb 100%)'}
         >
-          <img src={import.meta.env.BASE_URL + 'conch.svg'} alt="소라고동" style={{height:'1.2em',verticalAlign:'middle'}} />
+          <span role="img" aria-label="소라고동" style={{fontSize:'1.2em',verticalAlign:'middle'}}>🐚</span>
           마법의 소라고동님께 물어보기
         </button>
         <button

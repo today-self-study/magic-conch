@@ -44,7 +44,7 @@ function AnswerView({ question, answer, onReset }) {
       </div>
       <div style={{fontSize:16,marginBottom:8,color:'#888'}}>물어본 질문</div>
       <div style={{fontWeight:'bold',fontSize:18,marginBottom:18,color:'#333',wordBreak:'break-all'}}>{question}</div>
-      <div style={{fontSize:16,marginBottom:8,color:'#888'}}>마법의 소라고동의 대답</div>
+      <div style={{fontSize:16,marginBottom:8,color:'#888'}}>마법의 소라고동님의 대답</div>
       <div style={{fontWeight:'bold',fontSize:22,marginBottom:24,color:'#6c63ff',wordBreak:'break-all'}}>{answer}</div>
       <div style={{display:'flex',gap:8,justifyContent:'center'}}>
         <button
